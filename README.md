@@ -15,9 +15,7 @@ It will return an instance of [Symfony's `Process`](https://symfony.com/doc/curr
 
 ## Support us
 
-Learn how to create a package like this one, by watching our premium video course:
-
-[![Laravel Package training](https://spatie.be/github/package-training.jpg)](https://laravelpackage.training)
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/ssh.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/ssh)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
@@ -126,7 +124,7 @@ Under the hood the process will use `scp`.
 
 Behind the scenes all commands will be performed using [Symfonys `Process`](https://symfony.com/doc/current/components/process.html).
 
-You can configure to the `Process` by using the `configureProcess` method. Here's and example where we disable the timeout.
+You can configure to the `Process` by using the `configureProcess` method. Here's an example where we disable the timeout.
 
 ```php
 Ssh::create('user', 'host')->configureProcess(fn (Process $process) => $process->setTimeout(null));
@@ -134,13 +132,13 @@ Ssh::create('user', 'host')->configureProcess(fn (Process $process) => $process-
 
 ### Immediately responding to output
 
-You can get notified whenever you command produces output by setting by passing a closure to `onOutput`. 
+You can get notified whenever your command produces output by passing a closure to `onOutput`. 
 
 ```php
 Ssh::create('user', 'host')->onOutput(fn($type, $line) => echo $line)->execute('whoami');
 ```
 
-Whenever there is output that close will get called with two parameters:
+Whenever there is output that closure will get called with two parameters:
 - `type`: this can be `Symfony\Component\Process\Process::OUT` for regular output and `Symfony\Component\Process\Process::ERR` for error output
 - `line`: the output itself
 
